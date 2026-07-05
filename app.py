@@ -16,8 +16,7 @@ fig,ax=plt.subplots()
 ax.scatter(df['age'],df['bought_insurance'])
 ages=sorted(df['age'])
 ax.plot(ages,model.predict_proba(pd.DataFrame({'age':ages}))[:,1])
-st.pyplot(fig)
-age=st.slider('Age',18,100,30)
+st.pyplot(fig)1,100,30)
 if st.button('Predict'):
  p=model.predict_proba([[age]])[0][1]
  st.write(f'Probability: {p*100:.2f}%')
